@@ -18,7 +18,7 @@ function stripPHP($code) {
       if (is_array($token)) {
          list($type, $text) = $token;
          if (in_array($type, $validTypes)) {
-            $text = trim($text);
+            $text = trim(strip_tags($text));
             $text = preg_replace('/^[\'"]/', '', $text);
             $text = preg_replace('/[\'"]$/', '', $text);
             $text = preg_replace('/\\s+|(\\\\\\w)+/', ' ', $text);
