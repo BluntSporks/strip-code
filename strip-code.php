@@ -11,7 +11,6 @@ else {
 $options = getopt('wm:');
 $withFilename = isset($options['w']);
 $matchingExpr = isset($options['m']) ? $options['m'] : null;
-$matchingExpr = '/\\b(' . implode('|', $temps) . ')\\b/i';
 if (!file_exists($filename)) {
    die("File {$filename} does not exist\n");
 }
